@@ -1,10 +1,12 @@
 """
 Shared helpers for the mask comparison scripts.
 Both disagreement_map.py and mask_comparison_tiled.py use these.
+
+AI discalaimer - script is AI-assisted and human edited by Joel Betteridge
 """
 import numpy as np
 
-TILE_SIZE = 2048  # seemed to be a good balance between speed and memory on my laptop
+TILE_SIZE = 2048  # seemed to be a good balance between speed and memory on my computer
 
 
 def get_red_mask_tile(tile_rgb):
@@ -12,8 +14,9 @@ def get_red_mask_tile(tile_rgb):
     Takes an (H, W, 3) RGB tile and returns a binary mask where
     pure red pixels (255, 0, 0) = 1, everything else = 0.
 
-    TagLab exports annotations as pure red on top of the orthomosaic,
-    so this is just picking out exactly that colour.
+    I chose for staghorn annotations to be specifically 255,0,0 when training the datasets
+    so here we can pick out exacty that colour.
+
     """
     r, g, b = tile_rgb[:, :, 0], tile_rgb[:, :, 1], tile_rgb[:, :, 2]
     red_mask = (r == 255) & (g == 0) & (b == 0)

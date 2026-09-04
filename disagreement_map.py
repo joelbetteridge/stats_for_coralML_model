@@ -5,6 +5,8 @@ Green = both agree it's staghorn, red = AI only (false positive),
 blue = human only (AI missed it), black = both agree it's background.
 
 Processes in tiles so it doesn't fall over on the big orthomosaics.
+
+AI discalaimer - script is AI-assisted and human edited by Joel Betteridge
 """
 import argparse
 import sys
@@ -14,7 +16,7 @@ from PIL import Image as PILImage
 
 from mask_utils import TILE_SIZE, get_red_mask_tile, iter_tiles
 
-PILImage.MAX_IMAGE_PIXELS = None  # these images are huge on purpose, don't let PIL complain
+PILImage.MAX_IMAGE_PIXELS = None  # the orthomosaics are huge, easiest to set to None
 
 
 def build_disagreement_map(file_ai, file_human):

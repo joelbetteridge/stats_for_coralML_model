@@ -3,6 +3,8 @@
 Pixel-wise comparison of two binary mask PNGs (e.g. AI vs human annotation).
 Runs in tiles to keep memory sane on the big orthomosaics.
 Outputs a confusion matrix and accuracy/precision/recall/F1.
+
+AI discalaimer - script is AI-assisted and human edited by Joel Betteridge
 """
 import argparse
 import sys
