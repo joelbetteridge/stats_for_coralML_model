@@ -2,7 +2,6 @@
 Shared helpers for the mask comparison scripts.
 Both disagreement_map.py and mask_comparison_tiled.py use these.
 
-AI discalaimer - script is AI-assisted and human edited by Joel Betteridge
 """
 import numpy as np
 

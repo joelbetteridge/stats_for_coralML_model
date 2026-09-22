@@ -6,7 +6,6 @@ blue = human only (AI missed it), black = both agree it's background.
 
 Processes in tiles so it doesn't fall over on the big orthomosaics.
 
-AI discalaimer - script is AI-assisted and human edited by Joel Betteridge
 """
 import argparse
 import sys
