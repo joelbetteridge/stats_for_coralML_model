@@ -6,7 +6,7 @@
 
 ## Overview
 
-This repository contains utility scripts for comparing AI-generated coral segmentation masks against human annotations. It's designed to work with the outputs from the [Staghorn Coral AI Detection Model](https://github.com/joelbetteridge/ML-coral-detection-model), primarily for evaluating model performance and identifying systematic errors.
+This repository contains utility scripts for comparing AI-generated coral segmentation masks against human annotations. It's designed to work with the outputs from the [Staghorn Coral AI Detection Model](https://github.com/joelbetteridge/ML-coral-detection-model).
 
 The scripts process large orthomosaics (500+ megapixels) in tiles to avoid memory overflow, accumulate confusion matrices, and generate spatial disagreement maps showing exactly where the AI and human annotator disagree.
 
