@@ -10,6 +10,10 @@ This repository contains utility scripts for comparing AI-generated coral segmen
 
 The scripts process large orthomosaics (500+ megapixels) in tiles to avoid memory overflow, accumulate confusion matrices, and generate spatial disagreement maps showing exactly where the AI and human annotator disagree.
 
+The main reasons for this project were to act as a visualisation for other Reef Renewal Foundation staff and interns on an AI vs Human annotated orthomosaic, alongside providing insight into where the AI commonly makes mistakes to better design a new model. This project greatly pushed my python ability, and google gemini was used frequently to assist and explain.
+
+Due to being highly time-bound, the comparison was made between a fully AI annotated orthomosaic and then those annotations were edited by myself to an acceptable standard, therefore, it does not act as a blind comparison and metrics **will** be inflated. The model used was the baseline Stag_v1++ (see sister repository).
+
 ---
 
 ## What These Scripts Do
@@ -49,9 +53,6 @@ python disagreement_map.py <ai_mask.png> <human_mask.png> -o output.png
 # Print accuracy metrics
 python mask_comparison_tiled.py <ai_mask.png> <human_mask.png>
 
-# Both support --help
-python disagreement_map.py --help
-python mask_comparison_tiled.py --help
 ```
 
 ---
@@ -63,7 +64,7 @@ python mask_comparison_tiled.py --help
 Both scripts process the image in 2048×2048 tiles (configurable in `mask_utils.py`) to keep memory usage constant regardless of orthomosaic size.
 
 **Why PIL instead of rasterio?**  
-These scripts work with plain PNG masks (not georeferenced GeoTIFFs). Rasterio's windowed reads only save memory on tiled/stripped image formats; PNG decoding is sequential regardless of library. PIL is simpler for this use case and rasterio ran into errors when I used it.
+These scripts work with plain PNG masks (not georeferenced GeoTIFFs). Rasterio's windowed reads only save memory on tiled/stripped image formats; PNG decoding is sequential regardless of library. PIL is simpler for this use case and rasterio ran into errors when I used it, I'm not sure why?
 
 ### Shared Utilities
 
@@ -135,5 +136,7 @@ scikit-learn
 Coral Reef Restoration Technician Intern  
 Reef Renewal Foundation Bonaire  
 University of York, BSc Ecology (Third Year)
+
+*This work was assisted by the use of google gemini for idea creation and generating python code.*
 
 Companion repository to [Staghorn Coral AI Detection Model](https://github.com/joelbetteridge/ML-coral-detection-model).
